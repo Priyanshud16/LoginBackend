@@ -1,8 +1,10 @@
 const express=require("express")
 const ConnectDB = require("./config/db")
+const cors=require("cors")
 const userRouter = require("./Router/Router")
 const app=express()
 const dotenv=require("dotenv").config()
+app.use(cors())
 app.use(express.json())
 
 app.use("/user",userRouter)
